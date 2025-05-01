@@ -2,7 +2,7 @@
 # " function is declared like this\nprint('what to print')")
 
 # Input
-# print("Hello " + input("what is your name?"))
+print("Hello " + input("what is your name?"))
 
 # Exercise on input
 # print(len(input("Enter any word and I will give u the length ")))
@@ -12,7 +12,7 @@
 # print("Hello " + name )
 
 # separately using variables
-name = input("What is your name? ")
-length = len(name)
-print(length)
+# name = input("What is your name? ")
+# length = len(name)
+# print(length)
 
