@@ -17,9 +17,15 @@ False
 
 
 #Type Error, Type Checking and Type Conversion
-num = input("Enter a number")
-str(num)
-new_num = num[0]
-new_num1 = num[1]
 
-print(int(new_num) + int(new_num1))
+
+# Exercise
+num = input("Enter a number") 
+
+
+new_num = int(num[0])
+new_num1 = int(num[1])
+
+result = new_num + new_num1
+
+print(result)
