@@ -13,6 +13,6 @@ for n in student_height:
   count +=1
 
 avg = sum / count
-print(f"Average legnth is: {round(avg)}") 
+print(f"Average legnth is: {round(avg, 2)}") 
 
 
