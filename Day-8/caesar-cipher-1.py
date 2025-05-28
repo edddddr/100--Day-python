@@ -5,6 +5,7 @@ shift = int(input("Type shift number: \n"))
 
 alphabet =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
+
 def encrypt(plain_text, shift_amount):
     cipher = ""
     for letter in plain_text:
@@ -14,4 +15,17 @@ def encrypt(plain_text, shift_amount):
         cipher += new_letter
     print(cipher)
 
-encrypt(text, shift)
+def decrypt(plain_text, shift_amount):
+    cipher = ""
+    for letter in plain_text:
+        possition = alphabet.index(letter)
+        new_posstion = possition - shift_amount
+        new_letter = alphabet[new_posstion]
+        cipher += new_letter
+    print(cipher)
+
+
+if direction == "encode":
+    encrypt(text, shift)
+else:
+    decrypt(text, shift)
