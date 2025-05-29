@@ -1,4 +1,18 @@
 import random
+<<<<<<< HEAD
+
+word_list = ["ardvark", "baboon", "camel"]
+
+choosen_word = random.choice(word_list)
+
+guess = input("Guess a word : ").lower()
+
+for n in choosen_word:
+    if n == guess:
+        print("true")
+    else: 
+        print("False")
+=======
 import words
 
 display = []
@@ -47,5 +61,6 @@ while not end_of_game:
     
 
 
+>>>>>>> 47fbbe372b5910b81b0510c9db0dfb265166811d
 
 
