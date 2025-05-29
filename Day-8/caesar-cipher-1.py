@@ -1,31 +1,23 @@
 
 direction = input("Type 'encode' to encrypt type 'decode' to decrypt : \n")
+
 text = input("Type your message: \n").lower()
 shift = int(input("Type shift number: \n"))
 
 alphabet =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
+def caesar(cipher_direction, plain_text, shift_amount):
 
-def encrypt(plain_text, shift_amount):
-    cipher = ""
+    end_text = ""
     for letter in plain_text:
         possition = alphabet.index(letter)
-        new_posstion = possition + shift_amount
+        if cipher_direction == "encode":
+            new_posstion = possition + shift_amount
+        else:
+             new_posstion = possition + shift_amount
         new_letter = alphabet[new_posstion]
-        cipher += new_letter
-    print(cipher)
-
-def decrypt(plain_text, shift_amount):
-    cipher = ""
-    for letter in plain_text:
-        possition = alphabet.index(letter)
-        new_posstion = possition - shift_amount
-        new_letter = alphabet[new_posstion]
-        cipher += new_letter
-    print(cipher)
+        end_text += new_letter
+    print(f"Here's the {cipher_direction} result: {end_text}")
 
 
-if direction == "encode":
-    encrypt(text, shift)
-else:
-    decrypt(text, shift)
+caesar(direction, text, shift)
