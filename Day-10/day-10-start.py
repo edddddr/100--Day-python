@@ -1,12 +1,15 @@
 
 def format_name(f_name, l_name):
-    if f_name == "" and l_name == "":
+    # Doctumentation
+   """" Take the first and last name and formt it 
+   to return the title case version of the name."""
+   if f_name == "" and l_name == "":
         return 'Please enter valid input'
-    else:
+   else:
         formated_f_name =f_name.title()
         formated_l_name = l_name.title()
 
-    return f"The formated name is : {formated_f_name} {formated_l_name}"
+        return f"The formated name is : {formated_f_name} {formated_l_name}"
 
 
 
