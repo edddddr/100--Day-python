@@ -17,8 +17,13 @@
 
 
 # Play with computer
-year = int(input("What is year of birth? "))
-if year > 1980 and year < 1994:
-    print("you are mellenial.")
-elif year >= 1994:
-    print("You are Gen Z. ")
+# year = int(input("What is year of birth? "))
+# if year > 1980 and year < 1994:
+#     print("you are mellenial.")
+# elif year >= 1994:
+#     print("You are Gen Z. ")
+
+# Fix the Error
+age = int(input("How old are you? "))
+if age > 18:
+    print(f"You can drive at age {age}")
