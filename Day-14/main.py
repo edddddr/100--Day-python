@@ -31,6 +31,34 @@ def compare(A,B):
         print("B is the answer")
     return correct_Answer
          
-    
+
+def game():
+    is_correct = 'right'
+    score = 0
+
+    while is_correct != 'wrong':
+        if score !=0:
+            print(f"You're {RIGHT}! Current score is : {score}")
+
+        random_number1 = generator()
+        random_number2 = generator()
+
+        answer = option(random_number1, random_number2)
+
+        correct_answer = compare(data[random_number1]["follower_count"], data[random_number2]["follower_count"])
+
+        if correct_answer == answer:
+            score +=1
+            os.system('cls')
+        else:
+            is_correct = 'wrong'
+            os.system('cls')
+            
+    if is_correct == 'wrong':
+        print(f"Sorry, that's {WRONG}. Final score: {score}")
+
+
+
+game()
 
 
