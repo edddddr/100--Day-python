@@ -11,3 +11,12 @@ print(logo)
 
 def generator():
     return random.randint(0, len(data) -1)
+
+
+def option(random_number1,random_number2):
+    print(f"Compare A: {data[random_number1]["name"]}, a {data[random_number1]["description"]}, from {data[random_number1]["country"]}.")
+    print(vs)
+    print(f"Against B: {data[random_number2]["name"]}, a {data[random_number2]["description"]}, from {data[random_number2]["country"]}")
+
+    return input("Who has most follower? Type 'A' or 'B' : ")
+
