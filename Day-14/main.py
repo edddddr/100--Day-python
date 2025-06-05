@@ -20,3 +20,15 @@ def option(random_number1,random_number2):
 
     return input("Who has most follower? Type 'A' or 'B' : ")
 
+
+def compare(A,B):
+    correct_Answer = ''
+    if A >B:
+        correct_Answer = 'A'
+        print("A is the answer")
+    else:
+        correct_Answer = 'B'
+        print("B is the answer")
+    return correct_Answer
+         
+    
