@@ -71,3 +71,62 @@ def coffee_machine(flavor):
 
         return f"Here is your {flavor} ☕. Enjoy!"
              
+# def resource_checker(flavor):
+#     water_resources =  resource("water")
+#     milk_resources =  resource("milk")
+#     coffe_resources =  resource("coffee")
+
+#     ingredient_water_resources = ingredient_resources(flavor, "water")
+#     ingredient_coffe_resources = ingredient_resources(flavor, "coffee")
+#     if flavor != 'espresso':
+#         ingredient_milk_resources = ingredient_resources(flavor, "milk")
+    
+
+#     if water_resources < ingredient_water_resources:
+#             print('There is no enough water.')
+#     elif coffe_resources < ingredient_coffe_resources:
+#             print('There is no enough coffee.')
+#     if flavor != 'espresso' and milk_resources < ingredient_milk_resources:
+#             print('There is no enough milk.')
+   
+
+
+def processor(flavor):
+
+    
+    water_resources =  resource("water")
+    milk_resources =  resource("milk")
+    coffe_resources =  resource("coffee")
+
+    ingredient_water_resources = ingredient_resources(flavor, "water")
+    ingredient_coffe_resources = ingredient_resources(flavor, "coffee")
+    if flavor != 'espresso':
+        ingredient_milk_resources = ingredient_resources(flavor, "milk")
+    
+
+    if water_resources < ingredient_water_resources:
+            print('There is no enough water.')
+            return
+    elif coffe_resources < ingredient_coffe_resources:
+            print('There is no enough coffee.')
+            return
+    if flavor != 'espresso' and milk_resources < ingredient_milk_resources:
+            print('There is no enough milk.')
+            return
+
+    quarter = int(input("How many quarters? "))
+    dime = int(input("How many dimes? "))
+    nickle = int(input("How many nickles? "))
+    pennie = int(input("How many pennies? "))
+
+    coins_amount =   calculator(quarter, dime, nickle, pennie)
+    if coins_amount < MENU[flavor]['cost']:
+        print("Sorry that's not enough money. Money refunded.")
+    elif coins_amount == MENU[flavor]['cost']:
+        resources["money"] = coins_amount
+        print(coffee_machine(flavor))
+    elif coins_amount > MENU[flavor]['cost']:
+        print(f"Here is {coins_amount - MENU[flavor]['cost']} dollars in change")
+        print(coffee_machine(flavor))
+
+
