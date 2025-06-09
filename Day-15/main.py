@@ -37,3 +37,9 @@ resources = {
 
 def resource(flavor):
     return resources[flavor]
+
+
+
+def ingredient_resources(flavor, type):
+    return MENU[flavor]['ingredients'][type]
+
