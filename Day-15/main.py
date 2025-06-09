@@ -43,3 +43,7 @@ def resource(flavor):
 def ingredient_resources(flavor, type):
     return MENU[flavor]['ingredients'][type]
 
+
+# coffee calculator
+def calculator(quarter, dime, nickle, pennie):
+    return round((quarter * 0.25) + (dime * 0.10) + (nickle * 0.05) + (pennie * 0.01), 2)
