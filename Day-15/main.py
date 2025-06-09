@@ -34,3 +34,6 @@ resources = {
 }
 
 
+
+def resource(flavor):
+    return resources[flavor]
