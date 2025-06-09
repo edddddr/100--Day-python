@@ -47,3 +47,27 @@ def ingredient_resources(flavor, type):
 # coffee calculator
 def calculator(quarter, dime, nickle, pennie):
     return round((quarter * 0.25) + (dime * 0.10) + (nickle * 0.05) + (pennie * 0.01), 2)
+
+
+
+# machine
+def coffee_machine(flavor):
+        
+        water_resources =  resource("water")
+        milk_resources =  resource("milk")
+        coffe_resources =  resource("coffee")
+
+        ingredient_water_resources = ingredient_resources(flavor, "water")
+        ingredient_coffe_resources = ingredient_resources(flavor, "coffee")
+        if flavor != 'espresso':
+            ingredient_milk_resources = ingredient_resources(flavor, "milk")
+
+        resources["water"] = water_resources - ingredient_water_resources
+        resources["coffee"] = coffe_resources - ingredient_coffe_resources
+        if flavor != 'espresso':
+            resources["milk"] = milk_resources - ingredient_milk_resources
+
+
+
+        return f"Here is your {flavor} ☕. Enjoy!"
+             
