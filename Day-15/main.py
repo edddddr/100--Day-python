@@ -129,4 +129,23 @@ def processor(flavor):
         print(f"Here is {coins_amount - MENU[flavor]['cost']} dollars in change")
         print(coffee_machine(flavor))
 
+switch =  True
 
+while switch:
+    result = input("What would you like? (espresso/latte/cappuccino) : ")
+
+    
+    if result == 'report':
+        print("Water : ", resources['water'])
+        print("Milk : ", resources['milk'])
+        print("Coffee : ", resources['coffee'])
+    elif result == 'espresso':
+         processor(result)
+    elif result == 'latte':
+         processor(result)
+    elif result == 'cappuccino':
+         processor(result)
+    elif result == 'off':
+        switch = False
+    else:
+        print("You are entered invalid!")
