@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from random import choice, randint, shuffle
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_password():
@@ -32,16 +33,50 @@ def save():
    email = email_input.get() 
    password = password_input.get()
 
+   new_data = {
+       website:{
+           "email": email,
+           "password": password
+       }
+   }
+
    if len(website) == 0 or len(password) == 0:
        messagebox.showinfo(title="Oops",  message="Please don't leave any fields empty! ")
    else:
-    is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nEmail:{email}\nPassword:{password}\nIs it ok to save?")
-    if is_ok:
-            with open("data.txt", "a") as data_file:
-                data_file.write(f"{website} | {email} | {password}" + "\n")
-                web_input.delete(0, END)
-                password_input.delete(0, END)
+        try:
+            with open("data.json", "r") as data_file:
 
+                # Reading the data
+                data = json.load(data_file)
+
+               
+        except FleNoteFoundError:
+            with open("data.json", "w") as data_file:
+                # Saving the data
+                json.dump(new_data, data_file, indent=4)
+        else:
+            # Updating the data
+            data.update(new_data)
+        finally:
+            web_input.delete(0, END)
+            password_input.delete(0, END)
+
+def find_password():
+    website = web_input.get()
+    try:
+        with open("data.json", "r") as data_file:
+            data = json.load(data_file)
+
+            data =data[website]
+    except FleNoteFoundError:
+          messagebox.showinfo(title="Oop", message="No Data File Found.")
+    except IndexError:
+          messagebox.showinfo(title="Oop", message=f"No detils for the website exists")
+    else:
+        email =data['email']
+        password = data['password']
+
+        messagebox.showinfo(title=website, message=f"Email:{email}\n password:{password}")
 
 
 
@@ -63,6 +98,9 @@ web_label.grid(column=0, row=1)
 
 web_input = Entry(width=35)
 web_input.grid(column=1, row=1, columnspan=2)
+
+search_button = Button(text="Search", command=find_password)
+search_button.grid(column=2, row=1)
 
 
 email_label = Label(text="Email/Username: ")
