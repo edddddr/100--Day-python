@@ -5,6 +5,39 @@ from random import choice
 BACKGROUND_COLOR = "#B1DDC6"
 current_card = {}
 
+try:
+    data = pandas.read_csv("data/words_to_learn.csv")
+except FileNotFoundError:
+    data = pandas.read_csv('data/french_words.csv')
+    to_learn = data.to_dict(orient="records")
+else:
+    to_learn = data.to_dict(orient="records")
+
+
+
+
+def next_card():
+  global current_card, flip_timer
+  window.after_cancel(flip_timer)
+  current_card = choice(to_learn)
+  canvas.itemconfig(card_title, text="French", fill='black')
+  canvas.itemconfig(card_word,text=current_card['French'], fill='black')
+  canvas.itemconfig(card_img, image=card_front_img)
+  flip_timer = window.after(3000, func=flip_card)
+
+
+def flip_card():
+    canvas.itemconfig(card_title, text="English", fill='white')
+    canvas.itemconfig(card_word, text=current_card['English'], fill='white')
+    canvas.itemconfig(card_img, image=card_back_img)
+
+def is_known():
+    to_learn.remove(current_card)
+    data = pandas.DataFrame(to_learn)
+    data.to_csv("data/words_to_learn.csv")
+    print(len(to_learn))
+    next_card()
+
 
 window = Tk()
 window.title("Flashy")
