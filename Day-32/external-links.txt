@@ -1,0 +1,18 @@
+
+003 Python-smtplib-Documentation
+https://docs.python.org/3/library/smtplib.html
+
+004 Python-datetime-Documentation
+https://docs.python.org/3/library/datetime.html
+
+005 101-Monday-Motivational-Quotes-from-the-Positivity-Blog
+https://www.positivityblog.com/monday-motivation-quotes/
+
+005 Day-32-Ending-Code
+https://repl.it/@appbrewery/day-32-end#main.py
+
+008 Host-your-Code-in-the-Cloud-with-pythonanywhere
+https://www.pythonanywhere.com/
+
+008 Course-Fixes-Report-an-Issue
+https://forms.gle/fpNEQooYBX25gcG67
