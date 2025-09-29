@@ -60,8 +60,20 @@ def send_alert(message: str):
 stock_data = fetch_stock_data(STOCK, STOCK_API_URL)
 news_data = fetch_news(NEWS_API_URL, NEWS_API_KEY)
 price_percentage = calculate_price_change(stock_data, get_previous_date(2), get_previous_date(3))
+
 send_alert(f'TSLA: 🔺{price_percentage} % Headline:{news_data[0]['headline']} Brief:{news_data[0]['brief']}')
 
+
+"""
+TSLA: 🔺2%
+Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
+Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
+or"""
+
+"""TSLA: 🔻5%
+Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
+Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
+"""
 
 
 
