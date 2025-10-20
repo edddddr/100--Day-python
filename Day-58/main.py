@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests
 
 app = Flask(__name__)
@@ -14,9 +14,12 @@ def home():
 def about():
     return  render_template('about.html', blog_posts=posts)
 
-@app.route("/contact")
+@app.route("/contact", methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html')
+    if request.method == 'POST':
+        return '<h1>Successfully sent your message</h1>'
+    else:
+        return render_template('contact.html')
 
 @app.route("/post/<int:index>")
 def post(index):
