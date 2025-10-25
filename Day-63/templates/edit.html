@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+ <h3>{{book.title}}</h3>
+ <p>{{book.author}}</p>
+  <form action="{{url_for('home')}}" method="POST" >
+      <input
+              name="rating"
+              placeholder="New Rating"
+              type="text"
+              id="query"
+      >
+      <button type="submit">Chang Rating</button>
+
+  </form>
+</body>
+</html>
