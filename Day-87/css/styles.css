@@ -10900,3 +10900,18 @@ header.masthead .masthead-content .masthead-subheading {
     font-size: 4rem;
   }
 }
+
+
+/* Coustom css */
+.my-content-div {
+        display: inline-block; /* Or display: flex; */
+        /* Additional styling if using flexbox, e.g., justify-content: center; */
+}
+
+.cafe_img{
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
